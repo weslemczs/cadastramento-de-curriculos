@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Currículos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content container">
+            <nav class="navbar">
+                <span class="logo">Currículo+</span>
+                <a class="navbar__cta" href="#formulario">Cadastrar currículo</a>
+            </nav>
+            <div class="hero__text">
+                <h1>Transforme seu currículo em oportunidades</h1>
+                <p>Centralize candidaturas, organize perfis profissionais e encontre a vaga perfeita rapidamente.</p>
+                <a class="button button--primary" href="#formulario">Começar agora</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="card" id="formulario">
+            <h2>Cadastro de Currículo</h2>
+            <p class="section-subtitle">Preencha os campos abaixo para construir um perfil profissional completo.</p>
+            <form id="curriculoForm">
+                <fieldset>
+                    <legend>Informações pessoais</legend>
+                    <div class="grid grid--2">
+                        <label>Nome completo
+                            <input type="text" name="nome" placeholder="João da Silva" required>
+                        </label>
+                        <label>E-mail
+                            <input type="email" name="email" placeholder="email@exemplo.com" required>
+                        </label>
+                        <label>Telefone
+                            <input type="tel" name="telefone" placeholder="(11) 99999-9999" required>
+                        </label>
+                        <label>Cidade/Estado
+                            <input type="text" name="localizacao" placeholder="São Paulo/SP" required>
+                        </label>
+                    </div>
+                    <label>Resumo profissional
+                        <textarea name="resumo" rows="4" placeholder="Breve descrição sobre sua experiência e objetivos." required></textarea>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Experiências profissionais</legend>
+                    <div id="experienciasContainer" class="dynamic-group"></div>
+                    <button type="button" class="button button--ghost" id="adicionarExperiencia">Adicionar experiência</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Formação acadêmica</legend>
+                    <div id="formacoesContainer" class="dynamic-group"></div>
+                    <button type="button" class="button button--ghost" id="adicionarFormacao">Adicionar formação</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Competências</legend>
+                    <div class="grid grid--2">
+                        <label>Principais habilidades
+                            <input type="text" name="habilidades" placeholder="Ex: Liderança, Gestão de Projetos" required>
+                        </label>
+                        <label>Idiomas
+                            <input type="text" name="idiomas" placeholder="Ex: Inglês avançado, Espanhol intermediário">
+                        </label>
+                    </div>
+                    <label>Links relevantes
+                        <input type="url" name="link" placeholder="Portfolio, LinkedIn, GitHub...">
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="button button--primary">Salvar currículo</button>
+            </form>
+        </section>
+
+        <aside class="card" id="preview">
+            <h2>Currículos cadastrados</h2>
+            <p class="section-subtitle">Revise os cadastros registrados nesta sessão.</p>
+            <div id="curriculosLista" class="curriculos-lista">
+                <p class="placeholder">Nenhum currículo cadastrado ainda. Preencha o formulário para começar.</p>
+            </div>
+        </aside>
+    </main>
+
+    <section class="container destaque">
+        <div class="card card--info">
+            <h3>Dicas para um bom cadastro</h3>
+            <ul>
+                <li>Use um resumo objetivo e destaque conquistas.</li>
+                <li>Liste experiências recentes em ordem cronológica.</li>
+                <li>Inclua cursos, certificados e eventos relevantes.</li>
+                <li>Atualize competências técnicas e comportamentais.</li>
+            </ul>
+        </div>
+        <div class="card card--info">
+            <h3>Como os dados são armazenados?</h3>
+            <p>Os currículos preenchidos são guardados localmente no seu navegador. Dessa forma, você pode revisar e exportar os perfis a qualquer momento, mantendo o controle das suas informações.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <p>© <span id="anoAtual"></span> Currículo+. Todos os direitos reservados.</p>
+            <div class="footer__links">
+                <a href="#formulario">Cadastrar currículo</a>
+                <a href="#">Política de privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
